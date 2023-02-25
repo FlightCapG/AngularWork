@@ -1,0 +1,187 @@
+<!-- <section style="background-image: url('assets/Images/flight: 1px;') ; ">  -->
+<!--<img src="assets/Images/flight2.jpg" alt=""> -->
+<table>
+    <tr>
+        <td>
+            <h1 style="background-color:rgb(20, 17, 13) ;margin-left:1%;width:100%  ; color: aliceblue;">Do Booking</h1>
+            <table>
+                <div class="booking">
+                    <form (ngSubmit)="doFormSubmit()" #bookingForm="ngForm">
+
+                        <table>
+                            <tr>
+                                <div class="form-group">
+                                    <td><label>
+                                            <h3>Name</h3>
+                                        </label></td>
+                                    <br />
+                                    <td><input type="text" #name="ngModel" pattern="[a-zA-Z]+" [(ngModel)]="b.name"
+                                            class="form-control" id="bName" name="bName" placeholder=" " required>
+                                        <div *ngIf="name.invalid">
+                                            <span style="color: red;" *ngIf="name.errors?.['required']">
+
+                                                Name is required Field
+                                            </span>
+                                            <span style="color: red;" *ngIf="name.errors?.['pattern']">
+                                                Name is not valid
+                                            </span>
+                                        </div>
+                                    </td>
+                                </div>
+                            </tr>
+                        </table>
+
+                        <table>
+                            <tr>
+
+                                <div class="form-group">
+
+                                    <td><label>
+                                            <h3>Enter Ticket Cost</h3>
+                                        </label></td>
+                                    <td><input type="text" [(ngModel)]="b.ticketCost" class="form-control" id="bcost"
+                                            name="bcost" #ticketCost="ngModel" required min="200" max="8000">
+                                        <div *ngIf="ticketCost.invalid">
+                                            <span style="color: red;" *ngIf="ticketCost.errors?.['required']">
+
+                                                Ticket Cost is required Field
+                                            </span>
+                                            <span style="color: red;" *ngIf="ticketCost.errors?.['pattern']">
+                                                Ticket Cost is not valid
+                                            </span>
+                                        </div>
+                                    </td>
+                                </div>
+                            </tr>
+                        </table>
+
+                        <tr>
+                            <td>
+                                <h3>No. Of Passenger</h3>
+                            </td>
+                            <td><input type="number" #numberOfPassenger="ngModel" [(ngModel)]="b.numberOfPassenger"
+                                    name="numberOfPassenger" id="numberOfPassenger" min="1" max="10" /></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <h3>Time of Booking</h3>
+                            </td>
+                            <td><input type="time" #timeOfBooking="ngModel" [(ngModel)]="b.timeOfBooking"
+                                    name="timeOfBooking" id="timeOfBooking" /></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <h3>Select Flight-Arrival Time</h3>
+                            </td>
+                            <td><select #arrivalTime="ngModel" [(ngModel)]="b.arrivalTime" name="arrivalTime"
+                                    id="arrivalTime">
+                                    <option selected>Choose...</option>
+                                    <option value="2 AM">2 AM</option>
+                                    <option value="5 AM">5 AM</option>
+                                    <option value="8 AM">8 AM</option>
+                                    <option value="11 AM">11 AM</option>
+                                    <option value="2 PM">2 PM</option>
+                                    <option value="5 PM">5 PM</option>
+                                    <option value="8 PM">8 PM</option>
+                                </select>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <h3>Enter Date Of Travel</h3>
+                            </td>
+                            <td><input type="date" #dateOfBooking="ngModel" [(ngModel)]="b.dateOfBooking"
+                                    name="dateOfBooking" id="dateOfBooking" /></td>
+                        </tr>
+                        <tr>
+                            <table>
+                                <tr>
+                                    <div class="form-group">
+                                        <td><label><b>
+                                                    <h3>Source Airport</h3>
+                                                </b></label></td>
+                                        <td> <select #sourceAirport="ngModel" pattern="[a-zA-Z]+"
+                                                [(ngModel)]="b.sourceAirport" class="form-control" id="bSourceAirport"
+                                                name="bSourceAirport" placeholder="exp {like Pune, Mumbai }" required>
+                                                <option selected>Choose...</option>
+                                                <option value="Pune">Pune</option>
+                                                <option value="Mumbai">Mumbai</option>
+                                                <option value="Delhi">Delhi</option>
+                                                <option value="Goa">Goa</option>
+                                                <option value="Hyderabad">Hyderabad</option>
+                                                <option value="Banglore">Banglore</option>
+                                                <option value="Chennai">Chennai</option>
+
+                                            </select>
+                                            <div *ngIf="sourceAirport.invalid">
+                                                <span style="color: red;" *ngIf="sourceAirport.errors?.['required']">
+
+                                                    Source Airport is required Field
+                                                </span>
+                                                <span style="color: red;" *ngIf="sourceAirport.errors?.['pattern']">
+                                                    Source Airport is not valid
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </div>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+
+                                    <div class="form-group">
+                                        <td><label><b>
+                                                    <h3>Destination Airport</h3>
+                                                </b></label></td>
+                                        <td><select #destinationAirport="ngModel" pattern="[a-zA-Z]+"
+                                                [(ngModel)]="b.destinationAirport" class="form-control"
+                                                id="bDestinationAirport" name="bDestinationAirport"
+                                                placeholder="exp {like Pune, Mumbai }" required>
+                                                <option selected>Choose...</option>
+                                                <option value="Pune">Pune</option>
+                                                <option value="Mumbai">Mumbai</option>
+                                                <option value="Delhi">Delhi</option>
+                                                <option value="Goa">Goa</option>
+                                                <option value="Hyderabad">Hyderabad</option>
+                                                <option value="Banglore">Banglore</option>
+                                                <option value="Chennai">Chennai</option>
+                                            </select>
+
+                                            <div *ngIf="destinationAirport.invalid">
+                                                <span style="color: red;"
+                                                    *ngIf="destinationAirport.errors?.['required']">
+
+                                                    Destination Airport is required Field
+                                                </span>
+                                                <span style="color: red;"
+                                                    *ngIf="destinationAirport.errors?.['pattern']">
+                                                    Destination Airport is not valid
+                                                </span>
+
+                                            </div>
+                                        </td>
+                                    </div>
+                                </tr>
+                            </table>
+
+                            <br />
+
+                            <button style="border: 1px ;color: bisque ;" type="submit"
+                                class="btn btn-primary mb-2" [disabled]="bookingForm.form.invalid"
+                                click="doFormSubmit()">
+                                <h2><b>Book</b></h2>
+                            </button>
+
+                    </form>
+
+                </div>
+            </table>
+        </td>
+
+    </tr>
+</table>
+<!-- </section>  -->
+

@@ -1,0 +1,14 @@
+.myheader{
+    width: 100%;
+    height: 20%;
+    background-color: #0A337F;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+a{
+    color: aliceblue;
+    text-decoration: solid;
+    margin-right: 20%;
+}

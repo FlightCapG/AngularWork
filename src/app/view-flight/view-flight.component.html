@@ -1,0 +1,125 @@
+<div class="viewFlight">
+<table>
+    <tr>
+        <td>
+            Carrier Name
+            <select #carrierName (change)="getFlightByCarrier(carrierName.value)">
+                <option value="" disabled selected>Search</option>
+                <option value="Empire">Empire</option>
+                <option value="Emirates">Emirates</option>
+                <option value="Horizon">Horizon</option>
+                <option value="Indigo">Indigo</option>
+                <option value="Alaska">Alaska</option>
+            </select>
+        </td>
+        <td>
+            Source Name
+            <select #sourceAirport (change)="getFlightBySource(sourceAirport.value)">
+                <option value="" disabled selected>Search</option>
+                <option value="Pune">Pune</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Goa">Goa</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Banglore">Banglore</option>
+                <option value="Chennai">Chennai</option>
+
+            </select>
+        </td>
+        <td>
+            Destination Name
+            <select #destinationAirport (change)="getFlightByDestination(destinationAirport.value)">
+                <option value="" disabled selected>Search</option>
+                <option value="Pune">Pune</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Goa">Goa</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Banglore">Banglore</option>
+                <option value="Chennai">Chennai</option>
+            </select>
+        </td>
+    </tr>
+</table>
+
+
+    <div *ngFor="let flight of allFlights" style="background-color: rgb(247, 204, 148); width: 100%;">
+        <table style="width: 100%;">
+            <tr>
+                <td> <img src="/assets/images/{{flight.imageName}}" alt=" Flight image" width="150px" height="150px"></td>
+
+                <td>
+                    <h2 style="color: rgb(2, 2, 2); font-style: italic;">{{flight.carrierName}}</h2><hr />
+                    <p>{{flight.about|myabout}}</p>
+                    <hr/>
+
+                    <div>Flight id: {{flight.flightId}}</div>
+                    <div>Carrier Name: {{flight.carrierName}}</div>
+                    <div>Source Airport: {{flight.sourceAirport}}</div>
+                    <div>Destination Airport: {{flight.destinationAirport}}</div>
+                    <div>Duration: {{flight.duration}} hr</div>
+                    <div>Price: ₹{{flight.price}}<i> with {{flight.discount}}% off </i></div>
+                    <span *ngIf="flight.discount>10">
+                        <b
+                            style="color:rgb(37, 6, 216);text-decoration: underline;font-family: Georgia, 'Times New Roman', Times, serif;"><u><i>Recommended</i></u></b><br />
+                    </span>
+                    <hr />
+                <button value="{{flight.flightId}}" (click)="goForBooking" #flight> Book Flight </button>
+                <!-- <button > View Review </button> --> -->
+                
+                    
+                    <button value="{{flight.flightId}}" (click)="goForReview(flight.flightId)" #flight class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                      View Review
+                    </button>
+                  
+                  
+                    <div class="card card-body" *ngIf="showReview==true " >
+
+                     Average Review <b> {{a}} </b>
+                     <br/>
+                     <div *ngFor="let x of allReviews">
+                        {{x.numberOfStars}}
+                        <br/>
+                         {{x.content}}
+                        
+                        </div>
+                    </div>
+
+                  
+
+
+
+
+
+                </td>
+
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,203 @@
+<table>
+    <tr>
+            <h2
+                style="background-color: rgb(226, 238, 156);margin-left: 0%; width: 500%;text-align: center ;height:200% ;">
+                Add Flight</h2>
+                <div class="addFlight">
+                    <form style="width: 100%; margin-left: 10%; height: 200%;" (ngSubmit)="doFormSubmit()"
+                        class="form-horizontal" #flightForm="ngForm">
+
+                            <div class="form-group" style="margin-top: 10%;justify-content: center;">
+                                <td><label class="form-label" style="font-weight:bolder ;">Carrier Name</label></td>
+                                <td><select #carrierName="ngModel" pattern="[a-zA-Z]+" [(ngModel)]="f.carrierName"
+                                        class="form-control" id="fCarrierName" name="fCarrierName">
+                                        <option selected>Choose...</option>
+                                        <option value="Empire">Empire</option>
+                                        <option value="Emirates">Emirates</option>
+                                        <option value="Horizon">Horizon</option>
+                                        <option value="Indigo">Indigo</option>
+                                        <option value="Alaska">Alaska</option>
+                                    </select></td>
+                                <div *ngIf="carrierName.invalid">
+                                    <span style="color: rgb(106, 2, 2);" *ngIf="carrierName.errors?.['required']">
+
+                                        Carrier Name is required Field
+                                    </span>
+                                    <span style="color: rgb(106, 2, 2);" *ngIf="carrierName.errors?.['pattern']">
+                                        Carrier Name is not valid
+                                    </span>
+                                </div>
+                            </div>
+                        <tr>
+                            <div class="mb-3" style="margin-top: 10%">
+                                <td><label class="form-label" style="font-weight:bolder;margin-top: 10%">Source
+                                        Airport</label></td>
+                                <td><select #sourceAirport="ngModel" pattern="[a-zA-Z]+" [(ngModel)]="f.sourceAirport"
+                                        class="form-control" id="fSourceAirport" name="fSourceAirport"
+                                        placeholder="exp {like Pune, Mumbai }" required>
+                                <option selected>Choose...</option>
+                                <option value="Pune">Pune</option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Goa">Goa</option>
+                                <option value="Hyderabad">Hyderabad</option>
+                                <option value="Banglore">Banglore</option>
+                                <option value="Chennai">Chennai</option>
+                                </select>
+        </td>
+        <div *ngIf="sourceAirport.invalid">
+            <span style="color: rgb(106, 2, 2);" *ngIf="sourceAirport.errors?.['required']">
+
+                Source Airport is required Field
+            </span>
+            <span style="color: rgb(106, 2, 2);" *ngIf="sourceAirport.errors?.['pattern']">
+                Source Airport is not valid
+            </span>
+        </div>
+        </div>
+    </tr>
+    <tr>
+        <div class="form-group" style="margin-top: 10%">
+            <td><label class="form-label" style="font-weight:bolder ;">Destination Airport</label></td>
+            <td><select #destinationAirport="ngModel" pattern="[a-zA-Z]+" [(ngModel)]="f.destinationAirport"
+                    class="form-control" id="fDestinationAirport" name="fDestinationAirport"
+                    placeholder="exp {like Pune, Mumbai }" required>
+                    <option selected>Choose...</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Banglore">Banglore</option>
+                    <option value="Chennai">Chennai</option>
+                </select></td>
+            <div *ngIf="destinationAirport.invalid">
+                <span style="color: rgb(106, 2, 2);" *ngIf="destinationAirport.errors?.['required']">
+
+                    Destination Airport is required Field
+                </span>
+                <span style="color: rgb(106, 2, 2);" *ngIf="destinationAirport.errors?.['pattern']">
+                    Destination Airport is not valid
+                </span>
+            </div>
+        </div>
+    </tr>
+    <tr>
+        <div class="mb-3">
+            <td><label class="form-label">Arrival Time</label></td>
+            <td><select #arrivalTime="ngModel" [(ngModel)]="f.arrivalTime" class="form-control" id="fArrivalTime"
+                name="fArrivalTime" placeholder="exp {like 2am,3pm }" required>
+                <option selected>Select...</option>
+                <option value="2AM">2AM</option>
+                <option value="5AM">5AM</option>
+                <option value="8AM">8AM</option>
+                <option value="11AM">11AM</option>
+                <option value="2PM">2PM</option>
+                <option value="5PM">8PM</option>
+                <option value="8PM">8PM</option>
+            </select>
+        </td>
+        </div>
+    </tr>
+
+
+    <tr>
+        <div class="mb-3">
+            <td><label class="form-label">Departure Time</label></td>
+            <td><select #departureTime="ngModel" [(ngModel)]="f.departureTime" class="form-control" id="fDepartureTime"
+                name="fDepartureTime" placeholder="exp {like 2am,3pm }" required>
+                <option selected>Select...</option>
+                <option value="2.45AM">2.45AM</option>
+                <option value="6AM">6AM</option>
+                <option value="8.50AM">8.50AM</option>
+                <option value="11.40AM">11.40AM</option>
+                <option value="3PM">3PM</option>
+                <option value="6.30PM">6.30PM</option>
+                <option value="8.45PM">8.45PM</option>
+            </select>
+        </td>
+        </div>
+    </tr>
+
+    <tr>
+        <div class="form-group" style="margin-top: 10%">
+            <td><label class="form-label" style="font-weight:bolder ;">Duration</label></td>
+            <td><input type="number" ngModel maxlength="25" [(ngModel)]="f.duration" class="form-control" id="fduration"
+                    name="fduration" min="1" #duration="ngModel" placeholder="In Hours" required
+                    pattern="^[1-9][0-9]*(\.[0-9]+)?|0+\.[0-9]*[1-9][0-9]" /></td>
+            <div *ngIf="duration.invalid">
+                <span style="color:rgb(106, 2, 2);" *ngIf="duration.errors?.['required']">
+                    Duration is required
+                </span>
+                <span style="color: rgb(106, 2, 2);" *ngIf="duration.errors?.['pattern']">
+                    Duration is not valid
+                </span>
+            </div>
+        </div>
+    </tr>
+    <tr>
+        <div class="form-group" style="margin-top: 10%">
+            <td><label class="form-label" style="font-weight:bolder ;">Price</label></td>
+            <td><input type="number" [(ngModel)]="f.price" class="form-control" id="fprice" name="fprice"
+                    #price="ngModel" placeholder="In INR ₹" pattern="^[1-9][0-9]*(\.[0-9]+)?|0+\.[0-9]*[1-9][0-9]*₹"
+                    required></td>
+            <div *ngIf="price.invalid">
+                <span style="color: rgb(106, 2, 2);" *ngIf="price.errors?.['required']">
+                    Price is required
+                </span>
+                <span style="color: rgb(106, 2, 2);" *ngIf="price.errors?.['pattern']">
+                    Price is not valid
+                </span>
+            </div>
+        </div>
+    </tr>
+    <tr>
+        <div class="form-group" style="margin-top: 10%">
+            <td><label class="form-label" style="font-weight:bolder ;">Discount</label></td>
+            <td><input type="number" [(ngModel)]="f.discount" class="form-control" id="fdiscount" name="fdiscount"
+                    #discount="ngModel" placeholder="In INR ₹" pattern="^[1-9][0-9]*(\.[0-9]+)?|0+\.[0-9]*[1-9][0-9]*₹"
+                    required></td>
+            <div *ngIf="price.invalid">
+                <span style="color: rgb(106, 2, 2);" *ngIf="discount.errors?.['required']">
+                    Discount is required
+                </span>
+                <span style="color: rgb(106, 2, 2);" *ngIf="discount.errors?.['pattern']">
+                    Discount is not valid
+                </span>
+            </div>
+        </div>
+    </tr>
+    <tr>
+        <div class="form-group" style="margin-top: 10%">
+            <td><label style="font-weight:bolder ;background-color:transparent rgba(0, 0, 0, 0.199);">Image</label></td>
+            <td><input [(ngModel)]="f.imageName" type="text" class="form-control" id="image" name="image"
+                    placeholder="with extension exp *.JPG"></td>
+        </div>
+    </tr>
+    <tr>
+        <div class="form-group" style="margin-top: 10%">
+            <td><label style="font-weight:bolder ;">About Flight</label></td>
+            <td><textarea [(ngModel)]="f.about" class="form-control" id="aboutFlight" name="aboutFlight"
+                    rows="3"></textarea></td>
+        </div>
+    </tr>
+    <!-- <button -->
+    <!-- style="border: 1px; background-color: rgb(0, 0, 0);color: beige; margin-left: 80%; margin-bottom: 5%;" -->
+    <!-- type="submit" class="btn btn-primary mb-2" [disabled]="courseForm.form.invalid">Add</button> -->
+    <button type="submit" class="btn btn-primary">Add</button>
+    <td>
+        <table>
+            <div *ngFor="let f of allFlights">
+                <h2>Flight Added</h2>
+                <table>
+                    <tr>
+                        <div>Flight id:{{f.flightId}}</div>
+                        <div>Carrier Name: {{f.carrierName}}</div>
+                        <div>Source Airport: {{f.sourceAirport}}</div>
+                        <div>Destination Airport :{{f.destinationAirport}}</div>
+                        <div>Duration :{{f.duration}}</div>
+                        <hr />
+                </table>
+            </div>
+        </table>
+    </td>

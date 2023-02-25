@@ -1,0 +1,12 @@
+.AboutUs{
+    background-image:url("/assets/images/airplane2.jpg");
+    background-size: cover;
+    background-position:center;
+
+    background-color: rgb(193, 193, 202);
+    margin-left : 0.5%;
+    width: 1250px;
+    height: 700px;
+
+    
+}

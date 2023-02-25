@@ -1,0 +1,48 @@
+<div class="viewbooking">
+
+<table *ngIf="userRole == 'admin'">
+    <tr>
+        <td>
+            <h3 ><b>Booking By Name</b></h3>
+            <input type="text" #name>
+            <button (click)="getBooking3(name.value)">Load Booking</button>
+
+        </td>
+        <td>
+            <h3><b>By Destination Airport</b></h3>
+            <input type="text" #destinationAirport>
+
+            <button (click)="getBooking(destinationAirport.value)">Load Booking</button>
+        </td>
+        <td>
+            <h3><b>By Date Of Booking</b></h3>
+            <input type="text" #dateOfBooking>
+            <button (click)="getBooking1(dateOfBooking.value)">Load Booking</button>
+        </td>
+        <td>
+            <h3><b>Booking By time</b></h3>
+            <input type="text" #timeOfBooking>
+            <button (click)="getBooking2(timeOfBooking.value)">Load Booking</button>
+        </td>
+    </tr>
+</table>
+
+<div *ngFor="let book of allBooking">
+    <h2>All Bookings List</h2>
+    <h2><b>Booking Information</b></h2>
+    <table *ngIf="userRole == 'Passenger'">
+
+        <tr>Booking Id : {{book.bookingId}}</tr>
+        <tr>Name : {{book.name}}</tr>
+        <tr>No of Passenger : {{book.numberOfPassenger}}</tr>
+        <tr>Arrival Time : {{book.arrivalTime}}</tr>
+        <tr>Source Airport : {{book.sourceAirport}}</tr>
+        <tr>Destination Airport:{{book.destinationAirport}}</tr>
+        <tr>Time Of Booking : {{book.timeOfBooking}}</tr>
+        <tr>Date Of Booking : {{book.dateOfBooking}}</tr>
+        <tr>Source Airport : {{book.sourceAirport}}</tr>
+        <tr>Destination Airport:{{book.destinationAirport}}</tr>
+        <hr />
+    </table>
+</div>
+
