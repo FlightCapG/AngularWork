@@ -1,0 +1,66 @@
+<table>
+
+    <tr>
+        <td>
+            <h2>Booking By bookingId</h2>
+            <input type="number" #bookingId>
+            <button (click)="getBooking4(bookingId.value)">Load Booking</button>
+
+        </td>
+    </tr>
+    <tr>Booking Id : {{booking.bookingId}}</tr>
+    <tr>Name : {{booking.name}}</tr>
+    <tr>No of Passenger : {{booking.numberOfPassenger}}</tr>
+    <tr>Arrival Time : {{booking.arrivalTime}}</tr>
+    <tr>Source Airport : {{booking.sourceAirport}}</tr>
+    <tr>Destination Airport:{{booking.destinationAirport}}</tr>
+    <tr>Time Of Booking : {{booking.timeOfBooking}}</tr>
+    <tr>Date Of Booking : {{booking.dateOfBooking}}</tr>
+    <tr>Source Airport : {{booking.sourceAirport}}</tr>
+    <tr>Destination Airport:{{booking.destinationAirport}}</tr>
+<tr>
+
+    <tr>
+        <td>
+            <h2>Booking By Name</h2>
+            <input type="text" #name>
+            <button (click)="getBooking3(name.value)">Load Booking</button>
+
+        </td>
+        <td>
+            <h2>By Destination Airport</h2>
+            <input type="text" #destinationAirport>
+
+            <button (click)="getBooking(destinationAirport.value)">Load Booking</button>
+        </td>
+        <td>
+            <h2>By Date Of Booking</h2>
+            <input type="text" #dateOfBooking>
+            <button (click)="getBooking1(dateOfBooking.value)">Load Booking</button>
+        </td>
+        <td>
+            <h2>Booking By time</h2>
+            <input type="text" #timeOfBooking>
+            <button (click)="getBooking2(timeOfBooking.value)">Load Booking</button>
+        </td>
+    </tr>
+</table>
+
+<div *ngFor="let book of allBooking">
+    <h2>All Bookings List</h2>
+    <h2><b>Booking Information</b></h2>
+    <table>
+
+        <tr>Booking Id : {{book.bookingId}}</tr>
+        <tr>Name : {{book.name}}</tr>
+        <tr>No of Passenger : {{book.numberOfPassenger}}</tr>
+        <tr>Arrival Time : {{book.arrivalTime}}</tr>
+        <tr>Source Airport : {{book.sourceAirport}}</tr>
+        <tr>Destination Airport:{{book.destinationAirport}}</tr>
+        <tr>Time Of Booking : {{book.timeOfBooking}}</tr>
+        <tr>Date Of Booking : {{book.dateOfBooking}}</tr>
+        <tr>Source Airport : {{book.sourceAirport}}</tr>
+        <tr>Destination Airport:{{book.destinationAirport}}</tr>
+        <hr />
+    </table>
+</div>

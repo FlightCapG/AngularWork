@@ -1,0 +1,86 @@
+<!-- <app-header></app-header> -->
+
+<hr/>
+
+<table style="width: 100%; height: 15%;">
+  <tr>
+    <td style="width: 10%;"> <img src="/assets/images/icon.jpg"> </td>
+    <td style="width: 70%;background-color: rgb(233, 228, 244);"> <span style="font-size: 50px; color: rgb(6, 6, 72);margin-left: 20%; "> Fly High</span> </td>
+    <td style="width: 20%;background-color: rgb(233, 228, 244); ">
+      <div *ngIf="loginStatus == false">
+        <table style="width: 100%; height: 100%;">
+          <tr><input type="text" placeholder="name" #name required/></tr>
+          <tr><input type="password" placeholder="password" #password required/> </tr>
+          <tr>
+             <button (click)="verifyUser(name.value,password.value)"> Login</button> 
+            <!-- <button> Register </button> -->
+          </tr>
+        </table>
+      </div>
+
+      <div *ngIf="loginStatus == true">
+          <table>
+            <tr>
+              <td> <img src="/assets/userimage/{{photo}}" width="65px" height="65px"> </td>
+              <td> 
+                   Welcome <b> {{loginName}} </b> as <i> {{userRole}} </i> 
+                   <br/>
+                   <a href="#"> profile </a>
+                   <a href="#" (click)="doLogout()" style="margin-left: 20px;"> logout </a>
+                   
+              </td>
+            </tr>
+          </table>
+         
+    
+      </div>
+
+    </td>
+  </tr>
+</table>
+<hr class="line"/>
+
+
+<table style="width: 100%;height: 10%; background-color:  #88acef" *ngIf="loginStatus == true && userRole == 'admin'">
+  <br>
+  <tr>
+      <td style="width: 10%; text-align: center;"> <a routerLink="/add-flight">Add Flight</a></td>
+      <!-- <td style="width: 10%; text-align: center;"> <a routerLink="/bookingdetails">Book Flight</a></td>  -->
+      <!-- <td style="width: 10%; text-align: center;"> <a routerLink="/view">Search Flight</a></td>  -->
+      <td style="width: 10%; text-align: center;"> <a routerLink="/viewbooking">Reports</a></td>
+      <!-- <td style="width: 10%; text-align: center;"> <a routerLink="/view-review">View all reviews</a></td> -->
+
+      <td style="width: 10%; text-align: center;"> <a routerLink="/about-us">About Us</a></td>
+      
+      
+      
+  </tr>
+  <br>
+</table>
+<table style="width: 100%;height: 10%; background-color:  #88acef" *ngIf="loginStatus == true && userRole == 'Passenger'">
+  <br>
+  <tr>
+      <!-- <td style="width: 10%; text-align: center;"> <a routerLink="/add-flight">Add Flight</a></td> -->
+      <td style="width: 10%; text-align: center;"> <a routerLink="/bookingdetails">Book Flight</a></td> 
+      <td style="width: 10%; text-align: center;"> <a routerLink="/view">Search Flight</a></td> 
+      <!-- <td style="width: 10%; text-align: center;"> <a routerLink="/viewbooking">My Bookings</a></td> -->
+      <td style="width: 10%; text-align: center;"> <a routerLink="/flight-review">Add Review</a></td>
+      <td style="width: 10%; text-align: center;"> <a routerLink="/about-us">About Us</a></td>
+      
+      
+      
+  </tr>
+  <br>
+</table>
+<hr class="line2" *ngIf="loginStatus == true"/>
+<div *ngIf="loginStatus == false">
+   <img src="/assets/images/home.jpg"/>  -->
+</div>
+<div *ngIf="loginStatus == true">
+  <router-outlet></router-outlet>
+</div>
+
+
+<!-- <app-admin-work></app-admin-work> -->
+<!-- <app-flight-review></app-flight-review>  -->
+<!-- <router-outlet></router-outlet> -->
