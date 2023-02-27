@@ -12,6 +12,7 @@ export class AppComponent {
   loginName:string = '';
   userRole :string = '';
   loginStatus:boolean = false;
+  registerStatus:boolean = false;
   photo:string='';
 
   __dataService:DataOperationService;
@@ -40,6 +41,7 @@ export class AppComponent {
       
     }
   }
+  
 
   doLogout()
   {

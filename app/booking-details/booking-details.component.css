@@ -1,4 +1,4 @@
-.booking{
+.doBooking{
 
     background-image:url("/assets/images/airplane2.jpg");
     background-size: cover;
@@ -6,7 +6,6 @@
 
     background-color: rgb(179, 179, 227);
     margin-left : 0.5%;
-    width: 250%;
+    width: 1300px;
+    height: 700%;
 }
-
-

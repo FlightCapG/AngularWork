@@ -15,8 +15,18 @@ export class ViewReviewComponent {
   a=0;
   reviewForFlight=0;
   constructor( private reviewService: FlightReviewService) {
+    this.reviewService.getAllReviews().subscribe(
+      data=>{
+        console.log("data :- "+data);
+        this.allReviews=data;
+      },err=>{
+        console.log("error from spring ",err);
+      }
+    );
+
 
   }
+  
   showReview:boolean=false;
 
     goForReview(flight:number)
@@ -55,5 +65,4 @@ export class ViewReviewComponent {
   
       }
   
-
 }

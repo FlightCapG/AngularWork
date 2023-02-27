@@ -55,7 +55,7 @@ export class FlightReviewService {
     return this.http.post<FlightReview>(`${this.submitReviewEndPoint}`,flightReview);
     
   }
-  getAllReviewsFromSpring():Observable<FlightReviewDTO[]>
+  getAllReviews():Observable<FlightReviewDTO[]>
   {
     console.log("inside service : "+this.allReviewsEndPoint);
 

@@ -1,7 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { User, UserLoginDTO } from './user';
 
 interface AppUser{
-  name:string;
+  userName:string;
   password:string;
   role:string;
   photo:string;
@@ -15,35 +18,41 @@ interface AppUser{
 })
 export class DataOperationService {
 
-  allAppUsers:AppUser[] = [];
+  baseURL = 'http://localhost:9090';
+  loginURL : string = this.baseURL+'/user/login/';
+  registeruserEndpoint : string = this.baseURL+'/user/register';
 
-  constructor() {
+  allAppUsers:AppUser[] = [];
+  
+  userArr:User[] = [];
+
+  constructor(private http:HttpClient) { 
     let user1:AppUser = {
-      name:"srushti",
+      userName:"srushti",
       password : "123",
-      role:"Passenger",
+      role:"User",
       photo:"srushti.jpg"
     }
     let user2:AppUser = {
-      name:"hrutuja",
+      userName:"hrutuja",
       password : "123",
-      role:"Passenger",
+      role:"Instructor",
       photo:"hrutuja.jpg"
     }
     let user3:AppUser = {
-      name:"suresh",
+      userName:"suresh",
       password : "123",
-      role:"attendant",
+      role:"Student",
       photo:"suresh.png"
     }
     let user4:AppUser = {
-      name:"ramesh",
+      userName:"ramesh",
       password : "123",
-      role:"attendant",
+      role:"User",
       photo:"ramesh.png"
     }
     let user5:AppUser = {
-      name:"admin",
+      userName:"admin",
       password : "admin",
       role:"admin",
       photo:"admin.jpg"
@@ -51,56 +60,73 @@ export class DataOperationService {
 
     this.allAppUsers = [user1,user2,user3,user4,user5];
 
-   }
+  }
 
-   doLogin(ipName:string,ipPassword:string):boolean
-   {
-     localStorage.removeItem('name')
-     localStorage.removeItem('role')
-     localStorage.removeItem('loginStatus')
-     localStorage.removeItem('photo')
- 
+doSpringLogin(userId:string,password:string):Observable<UserLoginDTO>
+{
+  let a:string = this.loginURL+userId+'/'+password;
+  return this.http.get<UserLoginDTO>(`${a}`);
+
+}
+
+  doLogin(ipUserName:string,ipPassword:string):boolean
+  {
+    localStorage.removeItem('userName')
+    localStorage.removeItem('role')
+    localStorage.removeItem('loginStatus')
+    localStorage.removeItem('photo')
      
-     
-     console.log("inside Service : "+ipName+" & "+ipPassword);
+    console.log("inside Service : "+ipUserName+" & "+ipPassword);
+   
+    for(let i=0;i<this.allAppUsers.length;i++)
+    {
+       let thisUser:AppUser = this.allAppUsers[i];
+
+       if(thisUser.userName == ipUserName && thisUser.password == ipPassword)
+       {
+
+          localStorage.setItem("username",ipUserName);
+          localStorage.setItem("role",thisUser.role);
+          localStorage.setItem("loginStatus",true+'');
+          localStorage.setItem("photo",thisUser.photo);
+          
+          console.log("inside service for true ");
+          
+          return true; // note the break is not applicable in forEach because of window property
+       }
+
+    }
+    return false;
     
-     for(let i=0;i<this.allAppUsers.length;i++)
-     {
-        let thisUser:AppUser = this.allAppUsers[i];
+  } //end of doLogin
+
+  Submit(user:User):Observable<User>{
+    console.log("Inside the method :"+user);
+    //console.log(" Total Passengers Are :- "+this.passengerArr.length);
+
+    return this.http.post<User>(`${this.registeruserEndpoint}`,user);
+
+  }
+
+  getUserArr():User[]
+  {
+    return this.userArr;
+  }
+
+  doUserLogout()
+  {
+    localStorage.removeItem('userName')
+    localStorage.removeItem('role')
+    localStorage.removeItem('loginStatus')
+    localStorage.removeItem('photo')
+
+    console.log("inside Service logout ");
+
+  }
+}
+
  
-        if(thisUser.name == ipName && thisUser.password == ipPassword)
-        {
  
-           localStorage.setItem("name",ipName);
-           localStorage.setItem("role",thisUser.role);
-           localStorage.setItem("loginStatus",true+'');
-           localStorage.setItem("photo",thisUser.photo);
-           
-           console.log("inside service for true ");
-           
-           return true; // note the break is not applicable in forEach because of window property
-        }
- 
-     }
- 
- 
-    
-     return false;
-     
-   } //end of doLogin
- 
-   doUserLogout()
-   {
-     localStorage.removeItem('name')
-     localStorage.removeItem('role')
-     localStorage.removeItem('loginStatus')
-     localStorage.removeItem('photo')
- 
-     console.log("inside Service logout ");
- 
-   }
- 
- }
   
 
  

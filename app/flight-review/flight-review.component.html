@@ -1,20 +1,14 @@
+   
+    <form class="needs-validation" novalidate (ngSubmit)="onSubmit()" #flightReviewForm="ngForm">
 
-    <h1>Flight Review Form</h1>
-    
-    <form (ngSubmit)="onSubmit()" #flightReviewForm="ngForm">
-      <tr>
       <div class="form-group">
         <label for="flightId">Flight Number</label>
-        <input type="text"  class="form-control" id="flightId" name="flightId"
-               [(ngModel)]="model.flightId" placeholder="Enter FlightId e.g 101"  required >
-        
+        <input type="text" class="form-control rounded-0" id="flightId" name="flightId" [(ngModel)]="model.flightId" placeholder="Enter FlightId e.g 101" required>
+        <div class="invalid-feedback">
+          Please provide a valid flight number.
+        </div>
       </div>
-    </tr>
-    <br><br>
-
-
     
-    <tr>
       <div class="form-group">
         <label for="numberOfStars">Number of Stars</label>
         <div class="star-rating">
@@ -25,38 +19,20 @@
           <span class="star" [class.filled]="model.numberOfStars >= 5" (click)="model.numberOfStars = 5">&#9733;</span>
         </div>
       </div>
-      
-    </tr>
-    <br><br>
-    <tr>
+    
       <div class="form-group">
         <label for="content">Content</label>
-        <textarea class="form-control" id="content" name="content"
-                  [(ngModel)]="model.content" placeholder="Enter comment e.g Good" #content="ngModel" required ></textarea>
-
-                  <div *ngIf="content.invalid">
-                    <span style="color: red;" *ngIf="content.errors?.['required']">
-                        Content is required Field 
-                    </span> 
-                    <span style="color: red;" *ngIf="content.errors?.['pattern']">
-                        Content is not valid
-                    </span>
-
-                  </div>
-              </div>
-    </tr>  
-    <br><br>
-    
-      <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
-      <div class ="form-group">
-        <br/>
-        <input type = "submit" [disabled]="flightReviewForm.form.invalid" class = "forsubmit" value = "submit">
+        <textarea class="form-control rounded-0" id="content" name="content" [(ngModel)]="model.content" placeholder="Enter comment e.g Good" #content="ngModel" required></textarea>
+        <div class="invalid-feedback">
+          Please provide a valid comment.
         </div>
-  
+      </div>
+    
+      <button type="submit" class="btn btn-primary">Submit</button>
+    
+      <div class="mt-3" [ngClass]="{'alert alert-success': status, 'alert alert-danger': !status}" *ngIf="status !== undefined">
+        {{ status ? 'Your review has been submitted successfully.' : 'An error occurred while submitting your review.' }}
+      </div>
+    
     </form>
- 
-  
-    <div *ngIf="status == true" class="alert alert-success mt-3">Your review has been submitted successfully.</div>
-    <div *ngIf="status == false" class="alert alert-danger mt-3">An error occurred while submitting your review.</div>
-   
-  
+    

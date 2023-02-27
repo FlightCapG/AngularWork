@@ -1,0 +1,194 @@
+<table>
+    <tr>
+        <td>
+            <h1 style="background-color:rgb(164, 231, 231)  ; text-align: center;">Registration</h1>
+            <table>
+                <div class="registration">
+                    <form (ngSubmit)="doFormSubmit()" #userForm="ngForm">
+                        <table>
+                            <tr>
+                                <div class="form-group">
+                                    <td><label>User User Name</label></td>
+                                    <td><input type="text" #userName="ngModel" pattern="[a-zA-Z]+"
+                                            [(ngModel)]="p.userName" class="form-control" id="fName" name="fName"
+                                            placeholder=" enter Name of User" required>
+                                        <div *ngIf="userName.invalid">
+                                            <span style="color: red;" *ngIf="userName.errors?.['required']">
+
+                                                User Name is required Field
+                                            </span>
+                                            <span style="color: red;" *ngIf="userName.errors?.['pattern']">
+                                                User Name is not valid
+                                            </span>
+                                        </div>
+                                    </td>
+                                </div>
+                            </tr>
+                        </table>
+                        <table>
+                            <tr>
+                                <div class="form-group">
+                                    <td><label>User Last Name</label></td>
+                                    <td><input type="text" #lastName="ngModel" pattern="[a-zA-Z]+"
+                                            [(ngModel)]="p.lastName" class="form-control" id="lName" name="lName"
+                                            placeholder="Enter last Name " required>
+                                        <div *ngIf="lastName.invalid">
+                                            <span style="color: red;" *ngIf="lastName.errors?.['required']">
+
+                                                Last Name is required Field
+                                            </span>
+                                            <span style="color: red;" *ngIf="lastName.errors?.['pattern']">
+                                                Last Name is not valid
+                                            </span>
+                                        </div>
+                                    </td>
+                                </div>
+                            </tr>
+                        </table>
+
+                        <table>
+                            <tr>
+
+                                <div class="form-group">
+                                    <td><label>Password</label></td>
+                                    <td><input type="text" [(ngModel)]="p.password" class="form-control" id="pword"
+                                            name="pword" #password="ngModel" placeholder="e.g 123 " required>
+                                        <div *ngIf="password.invalid">
+                                            <span style="color: red;" *ngIf="password.errors?.['required']">
+
+                                                Password is required Field
+                                            </span>
+                                            <span style="color: red;" *ngIf="password.errors?.['pattern']">
+                                                Password is not valid
+                                            </span>
+                                        </div>
+
+                                </div>
+                            </tr>
+                        </table>
+                        <table>
+                            <tr>
+
+                                <div class="form-group">
+
+                                    <td><label> Phone Number</label></td>
+                                    <td><input type="text" [(ngModel)]="p.phoneNumber" class="form-control" id="uPhone"
+                                            name="uPhone" #phoneNumber="ngModel" placeholder="enter 10 digit PhoneNumber " required
+                                            pattern="[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]">
+                                        <div *ngIf="phoneNumber.invalid">
+                                            <span style="color: red;" *ngIf="phoneNumber.errors?.['required']">
+
+                                                 Phone Number is required Field
+                                            </span>
+                                            <span style="color: red;" *ngIf="phoneNumber.errors?.['pattern']">
+                                                 Phone Number is not valid
+                                            </span>
+                                        </div>
+                                    </td>
+                                </div>
+                            </tr>
+                        </table>
+                        <table>
+                            <tr>
+                                <div class="form-group">
+                                    <td><label><b>
+                                                <h3>User Gender</h3>
+                                            </b></label></td>
+                                    <td> <select #gender="ngModel" pattern="[a-zA-Z]+"
+                                            [(ngModel)]="p.gender" class="form-control" id="ugender"
+                                            name="ugender" placeholder=" " required>
+                                            <option selected>Choose...</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+
+                                        </select>
+                                        <div *ngIf="gender.invalid">
+                                            <span style="color: red;" *ngIf="gender.errors?.['required']">
+
+                                                User Gender is required Field
+                                            </span>
+                                            <span style="color: red;" *ngIf="gender.errors?.['pattern']">
+                                                User Gender is not valid
+                                            </span>
+                                        </div>
+                                    </td>
+                                </div>
+                            </tr>
+                        </table>                       
+                        <table>
+                            <tr>
+
+                                <div class="form-group">
+                                    <td><label> Email</label></td>
+                                    <td><input type="text" [(ngModel)]="p.emailId" class="form-control" id="email"
+                                            name="email" #emailId="ngModel" placeholder=" " required>
+                                        <div *ngIf="emailId.invalid">
+                                            <span style="color: red;" *ngIf="emailId.errors?.['required']">
+
+                                                 Email is required Field
+                                            </span>
+                                            <span style="color: red;" *ngIf="emailId.errors?.['pattern']">
+                                                 Email is not valid
+                                            </span>
+                                        </div>
+
+                                </div>
+                            </tr>
+                        </table>
+                        <table>
+                            <tr>
+                                <div class="form-group">
+                                    <td><label><b>
+                                                <h3>User Role</h3>
+                                            </b></label></td>
+                                    <td> <select #userRole="ngModel" pattern="[a-zA-Z]+"
+                                            [(ngModel)]="p.userRole" class="form-control" id="uRole"
+                                            name="uRole" placeholder=" " required>
+                                            <option selected>Choose...</option>
+                                            <option value="Admin">Admin</option>
+                                            <option value="User">User</option>
+
+                                        </select>
+                                        <div *ngIf="userRole.invalid">
+                                            <span style="color: red;" *ngIf="userRole.errors?.['required']">
+
+                                                User Role is required Field
+                                            </span>
+                                            <span style="color: red;" *ngIf="userRole.errors?.['pattern']">
+                                                User Role is not valid
+                                            </span>
+                                        </div>
+                                    </td>
+                                </div>
+                            </tr>
+                        </table>                       
+                        <button
+                            style="border: 1px ;background-color:rgb(47, 66, 66);color: bisque ;margin-left:80%;margin-bottom: 5%;"
+                            type="submit" class="btn btn-primary"
+                            [disabled]="userForm.form.invalid">Submit</button>
+                    </form>
+                </div>
+            </table>
+        </td>
+        <td>
+            <br />
+            <table>
+                <div *ngFor="let x of allUsers">
+                    <table>
+                        <h2>Registration Completed!</h2>
+                        <tr>userName : {{x.userName}}</tr>
+                        <tr>lastName : {{x.lastName}}</tr>
+                        <tr>password : {{x.password}}</tr>
+                        <tr>PhoneNumber : {{x.phoneNumber}}</tr>
+                        <tr>gender : {{x.gender}}</tr>
+                        <tr>emailId : {{x.emailId}}</tr>
+                        <tr>userRole : {{x.userRole}}</tr><br />
+                        <hr />
+                    </table>
+                </div>
+
+            </table>
+        </td>
+    </tr>
+</table>
+

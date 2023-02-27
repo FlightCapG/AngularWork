@@ -73,44 +73,43 @@ export class ViewFlightComponent {
 showReview:boolean=false;
 
 
-// goForReview(flight:number)
-//   {
+goForReview(flight:number)
+  {
     
-//     this.flightReviewService.getAllReviewByFlightId(flight).subscribe(
-//       data=>{
-//         this.allReviews = data;
-//         this.showReview = true;
-//         this.reviewForFlight = flight;
-//         let sum=0;
+    this.flightReviewService.getAllReviewByFlightId(flight).subscribe(
+      data=>{
+        this.allReviews = data;
+        this.showReview = true;
+        this.reviewForFlight = flight;
+        let sum=0;
 
-//     for (var j = 0; j < this.allReviews.length; j++){
-//       sum += this.allReviews[j].numberOfStars;
+    for (var j = 0; j < this.allReviews.length; j++){
+      sum += this.allReviews[j].numberOfStars;
       
       
 
-//       }
+      }
 
 
-//       this.a=sum/this.allReviews.length;
+      this.a=sum/this.allReviews.length;
 
-//       console.log(this.allReviews);
-//       console.log(this.a);
-//       }
+      console.log(this.allReviews);
+      console.log(this.a);
+      }
 
-//     )
+    )
     
-//     let sum=0;
-//     for (var j = 0; j < this.allReviews.length; j++){
-//       sum += this.allReviews[j].numberOfStars;
+    let sum=0;
+    for (var j = 0; j < this.allReviews.length; j++){
+      sum += this.allReviews[j].numberOfStars;
       
       
-//       }
-//       this.a=sum/this.allReviews.length;
+      }
+      this.a=sum/this.allReviews.length;
 
 
-// }
+}
 
-// }
 }
 
 

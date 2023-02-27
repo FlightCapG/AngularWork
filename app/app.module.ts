@@ -22,6 +22,8 @@ import { BookingDetailsComponent } from './booking-details/booking-details.compo
 import { ViewBookingComponent } from './view-booking/view-booking.component';
 import { ViewUserBookingComponent } from './view-user-booking/view-user-booking.component';
 import { ViewReviewComponent } from './view-review/view-review.component';
+import { RegisterComponent } from './register/register.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 
 
@@ -32,7 +34,11 @@ const allLinks:Routes=[
   {path:'bookingdetails',component:BookingDetailsComponent},
   {path:'viewbooking',component:ViewBookingComponent},
   {path:'viewuserbooking',component:ViewUserBookingComponent},
-  {path:'flight-review',component:FlightReviewComponent}
+  {path:'flight-review',component:FlightReviewComponent},
+  {path:'register',component:RegisterComponent},
+  {path:'home-page',component:HomePageComponent},
+  {path:'view-review',component:ViewReviewComponent},
+
   
   
 
@@ -56,7 +62,9 @@ const allLinks:Routes=[
     ViewBookingComponent,
     BookingDetailsComponent,
     ViewUserBookingComponent,
-    ViewReviewComponent
+    ViewReviewComponent,
+    RegisterComponent,
+    HomePageComponent
     
  
     
