@@ -10,7 +10,7 @@ export class FlightPipe implements PipeTransform{
 
         let formattedAbout:string='';
 
-        formattedAbout = about.slice(0,9)+'...';
+        formattedAbout = about.slice(0,100)+'...';
 
         console.log('pipe method :' +formattedAbout);
         return formattedAbout; 

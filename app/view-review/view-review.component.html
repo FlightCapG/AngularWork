@@ -1,13 +1,41 @@
  
- <h1> view feedback</h1>
+ <!-- <h1> view feedback</h1>
 
 <div *ngFor="let r of allReviews">
   <div><P>FlightID:{{r.flightId}}</P></div>
   <div><P>StarRating:{{r.numberOfStars}}</P></div>
   <div><P>Feedback:{{r.content}}</P></div> 
 </div> 
-<br>
-<hr/>
+<br/>
+<br/>
+<hr/> -->
+
+
+<div class="container mx-auto p-5">
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+      <div class="card-deck">
+        <div class="viewReview">
+          <h1 style="margin-right:70%;font-family: 'Times New Roman', Times, serif;"> View Review </h1>
+          <td>
+            <h3>Review By Flight Id</h3>
+            <input type="number" #flightId>
+            <button (click)="getReview1(+flightId.value)">View Review</button>
+          </td>
+          <h3 style="margin-right:70%;text-align: center;font-family: 'Times New Roman', Times, serif;"> All Reviews </h3>
+          <div *ngFor="let r of allReviews" style="margin-right:70%;text-align: center;font-family: 'Times New Roman', Times, serif;" >
+            <div><P><b>FlightID:{{r.flightId}}</b></P></div>
+            <div><P><b>StarRating:{{r.numberOfStars}}</b></P></div>
+            <div><P><b>Feedback:{{r.content}}</b></P></div>
+            <hr>
+            <br/> 
+          </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 

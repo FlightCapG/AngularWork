@@ -1,0 +1,7 @@
+.container{
+
+    background-image:url("/assets/images/airplane2.jpg");
+    background-size: cover;
+    background-position:cover;
+    width: 100%;
+}

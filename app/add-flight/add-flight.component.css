@@ -2,10 +2,9 @@
     background-image:url("/assets/images/airplane2.jpg");
     background-size: cover;
     background-position:cover;
-
-    background-color: rgb(179, 179, 227);
+    font-size: medium;
     margin-left : 0.5%;
-    width: 530%;
+    width: 600%;
     
 }
-   
+

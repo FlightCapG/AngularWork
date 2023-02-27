@@ -1,3 +1,4 @@
+<div class="viewbooking">
 <table>
 
     <!-- <tr>
@@ -22,24 +23,24 @@
 
     <tr>
         <td>
-            <h2>Booking By Name</h2>
+            <h3>Booking By Name</h3>
             <input type="text" #name placeholder="e.g megha">
             <button (click)="getBooking3(name.value)">Load Booking</button>
 
         </td>
         <td>
-            <h2>By Destination Airport</h2>
+            <h3>By Destination Airport</h3>
             <input type="text" #destinationAirport placeholder="e.g delhi">
 
             <button (click)="getBooking(destinationAirport.value)">Load Booking</button>
         </td>
         <td>
-            <h2>By Date Of Booking</h2>
+            <h3>By Date Of Booking</h3>
             <input text="date" #dateOfBooking placeholder="e.g 11thjan">
             <button (click)="getBooking1(dateOfBooking.value)" >Load Booking</button>
         </td>
         <td>
-            <h2>Booking By time</h2>
+            <h3>Booking By time</h3>
             <input type="text" #timeOfBooking placeholder="e.g 9">
             <button (click)="getBooking2(timeOfBooking.value)">Load Booking</button>
         </td>

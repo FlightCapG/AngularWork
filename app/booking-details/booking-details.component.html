@@ -71,8 +71,8 @@
                                             </label></td>
                                         <td><input type="number" [(ngModel)]="b.numberOfPassenger" class="form-control"
                                                 id="numberOfPassenger" name="numberOfPassenger" #numberOfPassenger="ngModel"
-                                                required min="1" max="15" style="margin-left: 48px;" placeholder="min 1 - max 15">
-                                            <div *ngIf="numberOfPassenger.invalid">
+                                                 min="1" max="15" style="margin-left: 48px;" placeholder="min 1 - max 15" required>
+                                            <div *ngIf="numberOfPassenger.invalid" >
                                                 <span style="color: red;margin-left: 48px;" *ngIf="numberOfPassenger.errors?.['required']">
     
                                                     Number Of Passenger is required Field
@@ -130,7 +130,7 @@
                                     <h3>Enter Date Of Booking:</h3>
                                 </td>
                                 <td><input type="date" #dateOfBooking="ngModel" [(ngModel)]="b.dateOfBooking"
-                                        name="dateOfBooking" id="dateOfBooking" style="margin-left: -236px;" /></td>
+                                        name="dateOfBooking" id="dateOfBooking" style="margin-left: -236px;" required /></td>
                             </tr>
                             <tr>
                                 <table>
@@ -207,13 +207,12 @@
     
                                 <br />
     
-                                <button
-                                    (click)="bookingDetails(name.value,dateOfBooking.value,sourceAirport.value,destinationAirport.value,timeOfBooking.value,arrivalTime.value)" >
-    
-                                    
-                                    Book
-    
-                                </button>
+                                
+<button [disabled]="!name.value || !dateOfBooking.value || !sourceAirport.value || !destinationAirport.value || !timeOfBooking.value || !arrivalTime.value"
+        (click)="bookingDetails(name.value, dateOfBooking.value, sourceAirport.value, destinationAirport.value, timeOfBooking.value, arrivalTime.value)">
+  Book
+</button>
+
     
                         </form>
     

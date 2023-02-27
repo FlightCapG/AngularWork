@@ -2,8 +2,9 @@
     background-image:url("/assets/images/airplane2.jpg");
     background-size: cover;
     background-position:cover;
-    max-width: 500px;
-    margin: auto;
+    max-width: 2000px;
+    margin-left: 0%;
+    width: 100%;
   }
   
   h1 {
@@ -18,7 +19,7 @@
   }
   
   th {
-    text-align: left;
+    text-align: center;
     padding: 10px;
     background-color: #f2f2f2;
   }

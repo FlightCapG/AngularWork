@@ -40,13 +40,13 @@ export class DataOperationService {
       photo:"hrutuja.jpg"
     }
     let user3:AppUser = {
-      userName:"suresh",
+      userName:"Naveen",
       password : "123",
-      role:"Student",
+      role:"User",
       photo:"suresh.png"
     }
     let user4:AppUser = {
-      userName:"ramesh",
+      userName:"Nikhil",
       password : "123",
       role:"User",
       photo:"ramesh.png"

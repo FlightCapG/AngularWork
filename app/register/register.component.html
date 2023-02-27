@@ -1,14 +1,14 @@
-<table>
+<table style="justify-content:center">
     <tr>
         <td>
             <h1 style="background-color:rgb(164, 231, 231)  ; text-align: center;">Registration</h1>
             <table>
-                <div class="registration">
+                <div class="registration" style="justify-content:center">
                     <form (ngSubmit)="doFormSubmit()" #userForm="ngForm">
-                        <table>
+                        <table style="justify-content:center">
                             <tr>
-                                <div class="form-group">
-                                    <td><label>User User Name</label></td>
+                                <div class="form-group"style="justify-content:center">
+                                    <td><label>User Name</label></td>
                                     <td><input type="text" #userName="ngModel" pattern="[a-zA-Z]+"
                                             [(ngModel)]="p.userName" class="form-control" id="fName" name="fName"
                                             placeholder=" enter Name of User" required>
@@ -25,10 +25,10 @@
                                 </div>
                             </tr>
                         </table>
-                        <table>
+                        <table style="justify-content:center">
                             <tr>
-                                <div class="form-group">
-                                    <td><label>User Last Name</label></td>
+                                <div class="form-group"style="justify-content:center">
+                                    <td><label>Last Name</label></td>
                                     <td><input type="text" #lastName="ngModel" pattern="[a-zA-Z]+"
                                             [(ngModel)]="p.lastName" class="form-control" id="lName" name="lName"
                                             placeholder="Enter last Name " required>
@@ -46,10 +46,10 @@
                             </tr>
                         </table>
 
-                        <table>
+                        <table style="justify-content:center">
                             <tr>
 
-                                <div class="form-group">
+                                <div class="form-group"style="justify-content:center">
                                     <td><label>Password</label></td>
                                     <td><input type="text" [(ngModel)]="p.password" class="form-control" id="pword"
                                             name="pword" #password="ngModel" placeholder="e.g 123 " required>
@@ -66,10 +66,10 @@
                                 </div>
                             </tr>
                         </table>
-                        <table>
+                        <table style="justify-content:center">
                             <tr>
 
-                                <div class="form-group">
+                                <div class="form-group"style="justify-content:center">
 
                                     <td><label> Phone Number</label></td>
                                     <td><input type="text" [(ngModel)]="p.phoneNumber" class="form-control" id="uPhone"
@@ -88,12 +88,12 @@
                                 </div>
                             </tr>
                         </table>
-                        <table>
+                        <table style="justify-content:center">
                             <tr>
-                                <div class="form-group">
-                                    <td><label><b>
-                                                <h3>User Gender</h3>
-                                            </b></label></td>
+                                <div class="form-group"style="justify-content:center">
+                                    <td><label><b>User Gender</b></label></td>
+                                                <!-- <h3 style="justify-content:center;">User Gender</h3> -->
+                                            
                                     <td> <select #gender="ngModel" pattern="[a-zA-Z]+"
                                             [(ngModel)]="p.gender" class="form-control" id="ugender"
                                             name="ugender" placeholder=" " required>
@@ -102,7 +102,7 @@
                                             <option value="Female">Female</option>
 
                                         </select>
-                                        <div *ngIf="gender.invalid">
+                                        <div *ngIf="gender.invalid"style="justify-content:center">
                                             <span style="color: red;" *ngIf="gender.errors?.['required']">
 
                                                 User Gender is required Field
@@ -115,10 +115,10 @@
                                 </div>
                             </tr>
                         </table>                       
-                        <table>
+                        <table style="justify-content:center">
                             <tr>
 
-                                <div class="form-group">
+                                <div class="form-group"style="justify-content:center">
                                     <td><label> Email</label></td>
                                     <td><input type="text" [(ngModel)]="p.emailId" class="form-control" id="email"
                                             name="email" #emailId="ngModel" placeholder=" " required>
@@ -135,17 +135,17 @@
                                 </div>
                             </tr>
                         </table>
-                        <table>
+                        <table style="justify-content:center">
                             <tr>
-                                <div class="form-group">
+                                <div class="form-group"style="justify-content:center">
                                     <td><label><b>
-                                                <h3>User Role</h3>
+                                                <h5 style="justify-content:center; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">User Role</h5>
                                             </b></label></td>
                                     <td> <select #userRole="ngModel" pattern="[a-zA-Z]+"
                                             [(ngModel)]="p.userRole" class="form-control" id="uRole"
                                             name="uRole" placeholder=" " required>
                                             <option selected>Choose...</option>
-                                            <option value="Admin">Admin</option>
+                                            <!-- <option value="Admin">Admin</option> -->
                                             <option value="User">User</option>
 
                                         </select>

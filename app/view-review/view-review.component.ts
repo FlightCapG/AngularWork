@@ -29,10 +29,10 @@ export class ViewReviewComponent {
   
   showReview:boolean=false;
 
-    goForReview(flight:number)
+    goForReview(flightId:number)
     {
       
-      this.reviewService.getAllReviewByFlightId(flight).subscribe(
+      this.reviewService.getAllReviewByFlightId(flightId).subscribe(
         data=>{
           this.allReviews = data;
           this.showReview = true;
@@ -63,6 +63,20 @@ export class ViewReviewComponent {
         this.a=sum/this.allReviews.length;
   
   
+
       }
+      getReview1(flightId:number){
+        this.reviewService.getAllReviewByFlightId(flightId).subscribe(
+          data=>{
+            console.log("data :- "+data);
+            
+            this.allReviews = data;
+          },err=>{
+            console.log("error from spring ",err);
+      
+          } 
+        );
+      }
+      
   
 }

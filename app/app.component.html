@@ -1,12 +1,13 @@
-<!-- <app-header></app-header> -->
+
 
 <hr/>
 
 <table style="width: 100%; height: 15%;">
   <tr>
     <td style="width: 0%;"> <img src="/assets/images/icon.jpg"> </td>
-    <td style="width: 50%;background-color: rgb(54, 141, 207);"> <span style="font-size: 50px; color: rgb(248, 248, 250);margin-left: 20%; "> Fly High</span> </td>
+    <td style="width: 50%;background-color: rgb(60, 89, 182);"> <span style="font-size: 50px; color: rgb(248, 248, 250);margin-left: 40%;font-family: Georgia, 'Times New Roman', Times, serif;"> <b>Fly High</b></span> </td>
     <td style="width: 20%;background-color: rgb(177, 200, 220); ">
+      
       <div *ngIf="loginStatus == false">
         <table style="width: 100%; height: 100%;">
           <br><br/>
@@ -15,26 +16,24 @@
           <tr>
             
              <button (click)="verifyUser(userName.value,password.value)"> Login</button>
-             <button routerLink="/register"> Register</button> 
-             <!-- <button><a   routerLink="/register">Register </a></button> -->
+             <button> Register</button> 
+             <!-- <button (click)="verifyUser" routerLink="/register"> Register</button> -->
              
-             <!-- <button (click)="verifyUser(name.value,password.value)"> Register</button> -->
+              
+             
              
                      
-            <!-- <button a routerLink="/register"> Register </button>  -->
-            <!-- <td > <a routerLink="/register">register</a></td> -->
+           
           </tr>
           
 
         </table>
       </div>
+      
       <hr class="line"/>
+      
   
-  <table style="width: 100%; height: 30%; background-color: rgb(183, 234, 241);">
-    <tr>
-      <td class="link" style="text-align: center;"> <a   routerLink="/home-page">Home</a> </td>
-    </tr>
-  </table> 
+  
 
 <hr class="line"/>
 
@@ -67,7 +66,8 @@
       <!-- <td style="width: 10%; text-align: center;"> <a routerLink="/bookingdetails">Book Flight</a></td>  -->
       <!-- <td style="width: 10%; text-align: center;"> <a routerLink="/view">Search Flight</a></td>  -->
       <td style="width: 10%; text-align: center;"> <a routerLink="/viewbooking">Reports</a></td>
-      <td style="width: 10%; text-align: center;"> <a routerLink="/view-review">Passenger reviews</a></td> 
+      <td style="width: 10%; text-align: center;"> <a routerLink="/view-review">Passenger reviews</a></td>
+     
 
       <td style="width: 10%; text-align: center;"> <a routerLink="/about-us">About Us</a></td>
       
@@ -76,6 +76,11 @@
   </tr>
   <br>
 </table>
+<table style="width: 100%; height: 30%; background-color: rgb(183, 234, 241);">
+  <tr>
+    <td class="link" style="text-align: center;"> <a   routerLink="/home-page">Home</a> </td>
+  </tr>
+</table> 
 <table style="width: 100%;height: 10%; background-color:  #88acef" *ngIf="loginStatus == true && userRole == 'User'">
   <br>
   <tr>
@@ -94,12 +99,15 @@
 </table>
 <hr class="line2" *ngIf="loginStatus == true"/>
 <div *ngIf="loginStatus == false">
+  <!-- <app-register></app-register> -->
    <img src="/assets/images/airplane1.gif" width="100%" height="50%"/> 
-   <!-- <app-register></app-register> -->
+   <app-register></app-register>
 </div>
 <div *ngIf="loginStatus == true">
   <router-outlet></router-outlet>
 </div>
+
+
 
 
 <!-- <div *ngIf="registerStatus == true">
@@ -108,6 +116,3 @@
 
 
 
-<!-- <app-admin-work></app-admin-work> -->
-<!-- <app-flight-review></app-flight-review>  -->
-<!-- <router-outlet></router-outlet> -->
