@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://colorlib.com/etc/bforms/colorlib-booking-5/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Booking Form HTML Template</title>
+
+<style id="" media="all">/* cyrillic-ext */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/ptsans/v17/jizaRExUiTo99u79D0-ExdGM.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/ptsans/v17/jizaRExUiTo99u79D0aExdGM.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/ptsans/v17/jizaRExUiTo99u79D0yExdGM.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/ptsans/v17/jizaRExUiTo99u79D0KExQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+
+<link type="text/css" rel="stylesheet" href="./Booking Form HTML Template_files/bootstrap.min.css">
+
+<link type="text/css" rel="stylesheet" href="./Booking Form HTML Template_files/style.css">
+
+
+<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+<meta name="robots" content="noindex, follow">
+<script type="text/javascript" async="" src="./Booking Form HTML Template_files/analytics.js.download" nonce="7326c498-8cc7-480a-8721-c0e513dc34d4"></script><script defer="" referrerpolicy="origin" src="./Booking Form HTML Template_files/s.js.download"></script><script nonce="7326c498-8cc7-480a-8721-c0e513dc34d4">(function(w,d){!function(f,g,h,i){f[h]=f[h]||{};f[h].executed=[];f.zaraz={deferred:[],listeners:[]};f.zaraz.q=[];f.zaraz._f=function(j){return function(){var k=Array.prototype.slice.call(arguments);f.zaraz.q.push({m:j,a:k})}};for(const l of["track","set","debug"])f.zaraz[l]=f.zaraz._f(l);f.zaraz.init=()=>{var m=g.getElementsByTagName(i)[0],n=g.createElement(i),o=g.getElementsByTagName("title")[0];o&&(f[h].t=g.getElementsByTagName("title")[0].text);f[h].x=Math.random();f[h].w=f.screen.width;f[h].h=f.screen.height;f[h].j=f.innerHeight;f[h].e=f.innerWidth;f[h].l=f.location.href;f[h].r=g.referrer;f[h].k=f.screen.colorDepth;f[h].n=g.characterSet;f[h].o=(new Date).getTimezoneOffset();if(f.dataLayer)for(const s of Object.entries(Object.entries(dataLayer).reduce(((t,u)=>({...t[1],...u[1]})))))zaraz.set(s[0],s[1],{scope:"page"});f[h].q=[];for(;f.zaraz.q.length;){const v=f.zaraz.q.shift();f[h].q.push(v)}n.defer=!0;for(const w of[localStorage,sessionStorage])Object.keys(w||{}).filter((y=>y.startsWith("_zaraz_"))).forEach((x=>{try{f[h]["z_"+x.slice(7)]=JSON.parse(w.getItem(x))}catch{f[h]["z_"+x.slice(7)]=w.getItem(x)}}));n.referrerPolicy="origin";n.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(f[h])));m.parentNode.insertBefore(n,m)};["complete","interactive"].includes(g.readyState)?zaraz.init():f.addEventListener("DOMContentLoaded",zaraz.init)}(w,d,"zarazData","script");})(window,document);</script></head>
+<body>
+<div id="booking" class="section">
+<div class="section-center">
+<div class="container">
+<div class="row">
+<div class="booking-form">
+<form>
+<div class="form-group">
+<div class="form-checkbox">
+<label for="roundtrip">
+<input type="radio" id="roundtrip" name="flight-type">
+<span></span>Roundtrip
+</label>
+<label for="one-way">
+<input type="radio" id="one-way" name="flight-type">
+<span></span>One way
+</label>
+<label for="multi-city">
+<input type="radio" id="multi-city" name="flight-type">
+<span></span>Multi-City
+</label>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="form-group">
+<span class="form-label">Flying from</span>
+<input class="form-control" type="text" placeholder="City or airport">
+</div>
+</div>
+<div class="col-md-6">
+<div class="form-group">
+<span class="form-label">Flyning to</span>
+<input class="form-control" type="text" placeholder="City or airport">
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3">
+<div class="form-group">
+<span class="form-label">Departing</span>
+<input class="form-control" type="date" required="">
+</div>
+</div>
+<div class="col-md-3">
+<div class="form-group">
+<span class="form-label">Returning</span>
+<input class="form-control" type="date" required="">
+</div>
+</div>
+<div class="col-md-2">
+<div class="form-group">
+<span class="form-label">Adults (18+)</span>
+<select class="form-control">
+<option>1</option>
+<option>2</option>
+<option>3</option>
+</select>
+<span class="select-arrow"></span>
+</div>
+</div>
+<div class="col-md-2">
+<div class="form-group">
+<span class="form-label">Children (0-17)</span>
+<select class="form-control">
+<option>0</option>
+<option>1</option>
+<option>2</option>
+</select>
+<span class="select-arrow"></span>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3">
+<div class="form-group">
+<span class="form-label">Travel class</span>
+<select class="form-control">
+<option>Economy class</option>
+<option>Business class</option>
+<option>First class</option>
+</select>
+<span class="select-arrow"></span>
+</div>
+</div>
+<div class="col-md-3">
+<div class="form-btn">
+<button class="submit-btn">Show flights</button>
+</div>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script async="" src="./Booking Form HTML Template_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+<script defer="" src="./Booking Form HTML Template_files/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon="{&quot;rayId&quot;:&quot;79e191f0cdda85ee&quot;,&quot;token&quot;:&quot;cd0b4b3a733644fc843ef0b185f98241&quot;,&quot;version&quot;:&quot;2023.2.0&quot;,&quot;si&quot;:100}" crossorigin="anonymous"></script>
+
+</body></html>
